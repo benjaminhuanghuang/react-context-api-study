@@ -1,26 +1,28 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import "./App.css";
+import { MovieProvider } from "./MovieContext";
 
 import Red from "./demo/RGB";
 import Red2 from "./demo/RGBContext";
 
-import { MovieProvider } from "./MovieContext";
 import Nav from "./Nav";
-import MovieList from "./MovieList";
-import AddMoive from "./AddMovie";
+import Home from "./Home";
+import About from "./About";
+import MoviePage from "./MoviePage";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <MovieProvider>
-          <Nav />
-          <MovieList />
-          <AddMoive/>
-        </MovieProvider>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <MovieProvider>
+      <Router>
+        <Nav />
+        <Route path="/" exact component={Home}></Route>
+        <Route path="/about" component={About}></Route>
+        <Route path="/movies" component={MoviePage}></Route>
+      </Router>
+    </MovieProvider>
+  );
 }
 
 export default App;

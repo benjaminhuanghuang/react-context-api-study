@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 
 import { MovieContext } from "./MovieContext";
 
@@ -7,8 +8,15 @@ function Nav() {
 
   return (
     <nav>
-      <h3>Dev</h3>
-      <p>List of Movies: {movies.length}</p>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+      </ul>
     </nav>
   );
 }
