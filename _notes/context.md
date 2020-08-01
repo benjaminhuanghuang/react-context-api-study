@@ -1,8 +1,3 @@
-React Context is a way for a child component to access a value in a parent component.
-One familiar problem in React is what is popularly known as prop drilling.
-React Context solves the problem of props drilling. It allows you to share props or state with an **indirect** child or parent.
-
-React context API comes with React 16.3 
 
 There are two main steps to setup the React context into your application 
 1. setup a context provider & define the data you want to store
